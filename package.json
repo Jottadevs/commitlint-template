@@ -1,11 +1,13 @@
 {
   "name": "commitlint-template",
   "version": "1.0.0",
-  "description": "",
+  "description": "Template para padronização de commits com Commitlint + Husky",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky"
+    "prepare": "husky",
+    "setup-hooks": "git config core.hooksPath $(node -p \"require('path').join(__dirname, '.husky').replace(/\\\\/g, '/')\")",
+    "postinstall": "git config core.hooksPath $(node -p \"require('path').join(__dirname, '.husky').replace(/\\\\/g, '/')\")"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +17,5 @@
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
     "husky": "^9.1.7"
-  }
+  } 
 }
