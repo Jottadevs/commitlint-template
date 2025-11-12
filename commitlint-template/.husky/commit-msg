@@ -1,2 +1,5 @@
 #!/usr/bin/env sh
-npx --no -- commitlint --edit "$1"
+# Executa o Commitlint que está DENTRO do commitlint-template
+node "$(dirname "$0")/../node_modules/@commitlint/cli/cli.js" \
+  --config "$(dirname "$0")/../commitlint.config.cjs" \
+  --edit "$1"
