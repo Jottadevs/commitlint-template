@@ -121,26 +121,6 @@ git commit -m "mensagem inválida"         # ❌ deve ser bloqueado
 
 ---
 
-## 🪄 Automação opcional
-
-Adicione no `commitlint-template/package.json`:
-
-```json
-"scripts": {
-  "postinstall": "git config core.hooksPath commitlint-template/.husky"
-}
-```
-
-Assim, ao rodar:
-
-```bash
-npm install --prefix commitlint-template
-```
-
-o Husky já será ativado automaticamente 🎉
-
----
-
 # 🇺🇸 Commitlint + Husky Template
 
 This repository provides a ready-to-use configuration to **standardize commit messages** using **Commitlint** and **Husky**, following the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
@@ -252,23 +232,5 @@ git commit -m "invalid message"           # ❌ should be blocked
 
 * [Node.js](https://nodejs.org/) **v18+**
 * Git installed and configured
-
----
-
-## 🪄 Optional automation
-
-Add to `commitlint-template/package.json`:
-
-```json
-"scripts": {
-  "postinstall": "git config core.hooksPath commitlint-template/.husky"
-}
-```
-
-Then run:
-
-```bash
-npm install --prefix commitlint-template
-```
 
 and Husky will be activated automatically 🎉
