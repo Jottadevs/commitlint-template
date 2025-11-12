@@ -1,42 +1,55 @@
-# 🧩 Commitlint + Husky Setup
+# 🧩 Commitlint + Husky Template
 
 *(English version below 🇺🇸)*
 
-Este projeto contém uma configuração pronta para **padronizar mensagens de commit** usando **Commitlint** e **Husky**, com base no padrão [Conventional Commits](https://www.conventionalcommits.org/pt-br/v1.0.0/).
+Este repositório contém uma configuração pronta para **padronizar mensagens de commit** usando **Commitlint** e **Husky**, com base no padrão [Conventional Commits](https://www.conventionalcommits.org/pt-br/v1.0.0/).
 
 ---
 
 ## 🚀 Como usar em outro repositório
 
-1. **Copie a pasta `commitlint-template` inteira** para dentro do seu repositório:
+> ⚠️ **Importante:** Não copie o repositório inteiro.
+> Copie **somente a pasta interna** chamada `commitlint-template`.
 
-   **Estrutura final:**
+### 1. Estrutura final esperada
 
-   ```
-   meu-projeto/
-   ├─ commitlint-template/
-   │  ├─ .husky/
-   │  ├─ commitlint.config.cjs
-   │  ├─ package.json
-   │  └─ package-lock.json
-   ├─ src/
-   └─ ...
-   ```
+Após copiar, seu projeto deve ficar assim:
 
-2. **Instale as dependências dentro da pasta:**
+```
+meu-projeto/
+├─ commitlint-template/
+│  ├─ .husky/
+│  ├─ commitlint.config.cjs
+│  ├─ package.json
+│  └─ package-lock.json
+├─ src/
+└─ ...
+```
 
-   ```bash
-   npm install --prefix commitlint-template
-   ```
+---
 
-3. **Ative os hooks do Husky na raiz do repositório:**
+### 2. Instale as dependências
 
-   ```bash
-   git config core.hooksPath commitlint-template/.husky
-   ```
+Rode o comando na raiz do seu repositório:
+
+```bash
+npm install --prefix commitlint-template
+```
+
+Isso instalará o **Commitlint** e o **Husky** dentro da pasta.
+
+---
+
+### 3. Ative os hooks do Husky
+
+Ainda na raiz do seu projeto, execute:
+
+```bash
+git config core.hooksPath commitlint-template/.husky
+```
 
 ✅ **Pronto!**
-A partir de agora, toda vez que alguém fizer um commit, o **Commitlint** vai validar se a mensagem segue o padrão definido — mesmo com a configuração dentro da pasta `commitlint-template`.
+Agora, toda vez que alguém fizer um commit, o **Commitlint** vai validar se a mensagem segue o padrão definido.
 
 ---
 
@@ -91,9 +104,7 @@ merge(branch): integra alterações da main
 
 ---
 
-## 💡 Dica rápida
-
-Teste para confirmar que está tudo configurado corretamente:
+## 💡 Teste rápido
 
 ```bash
 git commit -m "feat: exemplo válido"      # ✅ deve passar
@@ -104,14 +115,14 @@ git commit -m "mensagem inválida"         # ❌ deve ser bloqueado
 
 ## 📦 Requisitos
 
-* [Node.js](https://nodejs.org/) **18+**
+* [Node.js](https://nodejs.org/) **v18+**
 * Git configurado no sistema
 
 ---
 
 ## 🪄 Automação opcional
 
-Adicione no `commitlint-template/package.json` para automatizar:
+Adicione no `commitlint-template/package.json`:
 
 ```json
 "scripts": {
@@ -129,43 +140,52 @@ o Husky já será ativado automaticamente 🎉
 
 ---
 
-# 🇺🇸 Commitlint + Husky Setup
+# 🇺🇸 Commitlint + Husky Template
 
-This project provides a ready-to-use setup to **standardize commit messages** using **Commitlint** and **Husky**, following the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
+This repository provides a ready-to-use configuration to **standardize commit messages** using **Commitlint** and **Husky**, following the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
 
 ---
 
 ## 🚀 How to use in another repository
 
-1. **Copy the entire `commitlint-template` folder** into your repository:
+> ⚠️ **Important:** Do **not** copy the entire repository.
+> Copy **only the inner folder** named `commitlint-template`.
 
-   **Final structure:**
+### 1. Final project structure
 
-   ```
-   my-project/
-   ├─ commitlint-template/
-   │  ├─ .husky/
-   │  ├─ commitlint.config.cjs
-   │  ├─ package.json
-   │  └─ package-lock.json
-   ├─ src/
-   └─ ...
-   ```
+After copying, your project should look like this:
 
-2. **Install dependencies inside the folder:**
+```
+my-project/
+├─ commitlint-template/
+│  ├─ .husky/
+│  ├─ commitlint.config.cjs
+│  ├─ package.json
+│  └─ package-lock.json
+├─ src/
+└─ ...
+```
 
-   ```bash
-   npm install --prefix commitlint-template
-   ```
+---
 
-3. **Activate Husky hooks from the repository root:**
+### 2. Install dependencies
 
-   ```bash
-   git config core.hooksPath commitlint-template/.husky
-   ```
+From your repository root, run:
+
+```bash
+npm install --prefix commitlint-template
+```
+
+---
+
+### 3. Activate Husky hooks
+
+```bash
+git config core.hooksPath commitlint-template/.husky
+```
 
 ✅ **Done!**
-From now on, every commit will be validated by **Commitlint**, even though the configuration is located inside the `commitlint-template` folder.
+From now on, **Commitlint** will validate every commit message automatically.
 
 ---
 
@@ -179,7 +199,7 @@ From now on, every commit will be validated by **Commitlint**, even though the c
 
 ```bash
 feat(api): add new login endpoint
-fix(ui): correct button alignment
+fix(ui): fix send button bug
 docs(readme): update installation guide
 create(utils): add initial utility script
 update(auth): modify authentication logic
@@ -200,7 +220,7 @@ merge(branch): integrate main changes
 | **refactor** | Code refactor without behavior change           |
 | **perf**     | Performance improvements                        |
 | **test**     | Adding or updating tests                        |
-| **build**    | Changes to the build system                     |
+| **build**    | Build system changes                            |
 | **ci**       | CI/CD pipeline changes                          |
 | **chore**    | Minor maintenance tasks                         |
 | **revert**   | Revert a previous commit                        |
@@ -213,8 +233,8 @@ merge(branch): integrate main changes
 
 ## ⚙️ How it works
 
-* **Husky** creates a `commit-msg` hook that automatically runs **Commitlint** for each commit.
-* **Commitlint** checks the message format and blocks invalid commits.
+* **Husky** runs a `commit-msg` hook for every commit.
+* **Commitlint** checks the commit message and blocks invalid formats.
 
 ---
 
@@ -236,7 +256,7 @@ git commit -m "invalid message"           # ❌ should be blocked
 
 ## 🪄 Optional automation
 
-Add this to `commitlint-template/package.json`:
+Add to `commitlint-template/package.json`:
 
 ```json
 "scripts": {
@@ -244,10 +264,10 @@ Add this to `commitlint-template/package.json`:
 }
 ```
 
-Then simply run:
+Then run:
 
 ```bash
 npm install --prefix commitlint-template
 ```
 
-and Husky will automatically be activated 🎉
+and Husky will be activated automatically 🎉

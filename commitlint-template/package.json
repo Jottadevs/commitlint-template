@@ -1,0 +1,16 @@
+{
+  "name": "commitlint-template",
+  "version": "1.0.0",
+  "description": "Template para padronização de commits com Commitlint + Husky",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky",
+    "postinstall": "git config core.hooksPath commitlint-template/.husky"
+  },
+  "type": "commonjs",
+  "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "husky": "^9.1.7"
+  }
+}
