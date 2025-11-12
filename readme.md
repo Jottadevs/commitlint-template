@@ -15,6 +15,7 @@ Este repositório contém uma configuração pronta para **padronizar mensagens 
 
 Após copiar, seu projeto deve ficar assim:
 
+
 ```
 meu-projeto/
 ├─ commitlint-template/
