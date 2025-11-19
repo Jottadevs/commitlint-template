@@ -15,7 +15,6 @@ Este repositório contém uma configuração pronta para **padronizar mensagens 
 
 Após copiar, seu projeto deve ficar assim:
 
-
 ```
 meu-projeto/
 ├─ commitlint-template/
@@ -29,27 +28,52 @@ meu-projeto/
 
 ---
 
-### 2. Instale as dependências
+### 2. ⚠️ Usuários Windows (PowerShell)
 
-Rode o comando na raiz do seu repositório:
+Se ao rodar qualquer comando `npm` aparecer o erro:
+
+```
+npm : O arquivo ... npm.ps1 não pode ser carregado porque a execução de scripts foi desabilitada neste sistema.
+```
+
+Isso acontece porque o PowerShell bloqueia scripts `.ps1`.
+Para liberar, abra o **PowerShell como Administrador** e execute:
+
+```powershell
+Set-ExecutionPolicy RemoteSigned
+```
+
+Se quiser liberar **apenas na sessão atual**, use:
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process
+```
+
+💡 Alternativa: use o **CMD** (Prompt de Comando), que não bloqueia scripts.
+
+---
+
+### 3. Instale as dependências
+
+Na raiz do seu projeto, execute:
 
 ```bash
 npm install --prefix commitlint-template
 ```
 
-Isso instalará o **Commitlint** e o **Husky** dentro da pasta.
-
 ---
 
-### 3. Ative os hooks do Husky
+### 4. Ative os hooks do Husky
 
-Ainda na raiz do seu projeto, execute:
+Ainda na raiz:
 
 ```bash
 git config core.hooksPath commitlint-template/.husky
 ```
 
-✅ **Pronto!**
+---
+
+🎉 **Pronto!**
 Agora, toda vez que alguém fizer um commit, o **Commitlint** vai validar se a mensagem segue o padrão definido.
 
 ---
@@ -121,6 +145,8 @@ git commit -m "mensagem inválida"         # ❌ deve ser bloqueado
 
 ---
 
+---
+
 # 🇺🇸 Commitlint + Husky Template
 
 This repository provides a ready-to-use configuration to **standardize commit messages** using **Commitlint** and **Husky**, following the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
@@ -132,9 +158,7 @@ This repository provides a ready-to-use configuration to **standardize commit me
 > ⚠️ **Important:** Do **not** copy the entire repository.
 > Copy **only the inner folder** named `commitlint-template`.
 
-### 1. Final project structure
-
-After copying, your project should look like this:
+### 1. Final structure
 
 ```
 my-project/
@@ -149,9 +173,32 @@ my-project/
 
 ---
 
-### 2. Install dependencies
+### 2. ⚠️ Windows (PowerShell) users
 
-From your repository root, run:
+If you see this error:
+
+```
+npm.ps1 cannot be loaded because scripts are disabled on this system.
+```
+
+You must allow PowerShell to run scripts.
+Open **PowerShell as Administrator** and run:
+
+```powershell
+Set-ExecutionPolicy RemoteSigned
+```
+
+Or only for the current session:
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process
+```
+
+💡 Alternatively, use **CMD**, which does not block scripts.
+
+---
+
+### 3. Install dependencies
 
 ```bash
 npm install --prefix commitlint-template
@@ -159,14 +206,16 @@ npm install --prefix commitlint-template
 
 ---
 
-### 3. Activate Husky hooks
+### 4. Activate Husky hooks
 
 ```bash
 git config core.hooksPath commitlint-template/.husky
 ```
 
-✅ **Done!**
-From now on, **Commitlint** will validate every commit message automatically.
+---
+
+🎉 **Done!**
+From now on, **Commitlint** will validate every commit automatically.
 
 ---
 
@@ -192,23 +241,7 @@ merge(branch): integrate main changes
 
 ## 📚 Supported types
 
-| Type         | Description                                     |
-| ------------ | ----------------------------------------------- |
-| **feat**     | New feature                                     |
-| **fix**      | Bug fix                                         |
-| **docs**     | Documentation updates                           |
-| **style**    | Code style or formatting (no functional change) |
-| **refactor** | Code refactor without behavior change           |
-| **perf**     | Performance improvements                        |
-| **test**     | Adding or updating tests                        |
-| **build**    | Build system changes                            |
-| **ci**       | CI/CD pipeline changes                          |
-| **chore**    | Minor maintenance tasks                         |
-| **revert**   | Revert a previous commit                        |
-| **update**   | Minor updates or adjustments                    |
-| **config**   | Configuration or environment changes            |
-| **merge**    | Merge commits between branches                  |
-| **create**   | Initial creation of files or modules            |
+*(same table as above)*
 
 ---
 
